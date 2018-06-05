@@ -1,6 +1,5 @@
 # This is My Blog
-Thank you for coming.
-
+Thank you for coming.  
 I use English.
 
 Not because I am good at it.
