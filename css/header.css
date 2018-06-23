@@ -1,20 +1,23 @@
 header{
-	height: 300px;
+	height: 100px;
 	display: block;
+	border: 2px solid #53B3CB;
+	border-radius: 10px;
+	background-color: #53B3CB;
 }
 header>.container{
-	background-color: black;
+	background-color: #53B3CB;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
-	height: 300px;
+	height: 100px;
+	border-radius: 10px;
+	border: 2px solid #53B3CB;
 }
 .container>h1{
-	color: white;
 	margin: 10px 20px;
 	align-self: flex-start;
 }
 .container>span{
-	color:white;
 	margin:5px 20px;
 }
