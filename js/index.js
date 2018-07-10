@@ -1,11 +1,4 @@
 $(document).ready(function() {
-	//显示md文章
-	$.get("article_demo.md", function(data){
-	    var converter = new showdown.Converter();
-    	var html = converter.makeHtml(data);
-  		$('.real_article').html(html);	
-	});
-   
 	//显示隐藏侧栏
     $(".toggle").click(function() {
         $(".nav").toggle();
@@ -29,12 +22,19 @@ $(document).ready(function() {
 
     	// var regex = /k=(\w+)/;
     	// var subStr = regex.exec(url)[1];
-    	$.get("http://d3.weather.com.cn/webgis_rain_new/webgis/minute?lat=30.195567&lon=120.190509&stationid=101210101&callback=_jsonpz1tdk5ia9fs",function(data){
-    		alert(data);
-    	});
     	$("#subStr").text(new RegExp("k=(\\w+)").exec(window.location.search)[1]);
     })
 });
+function showPost(){
+
+	//显示md文章
+	$.get("article_demo.md", function(data){
+	    var converter = new showdown.Converter();
+    	var html = converter.makeHtml(data);
+  		$('.real_content').html(html);	
+	});
+   
+}
 function keyEnter(e){
 	if(e.keyCode==13)
 		$("#b1").click();

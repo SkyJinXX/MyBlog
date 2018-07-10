@@ -7,7 +7,7 @@ body{
 	display: flex;
 	justify-content: space-between;		
 }
-.article{
+.content{
 	background-color: #F9C22E;
 	border: 2px solid #F9C22E; 
 	border-radius: 10px;
@@ -17,7 +17,7 @@ body{
 	flex-direction: column;
 	align-items: center;
 }
-.real_article{
+.real_content{
 	width: 60%;
 }
 .nav{
