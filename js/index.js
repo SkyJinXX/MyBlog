@@ -29,6 +29,9 @@ $(document).ready(function() {
 
     	// var regex = /k=(\w+)/;
     	// var subStr = regex.exec(url)[1];
+    	$.get("http://d3.weather.com.cn/webgis_rain_new/webgis/minute?lat=30.195567&lon=120.190509&stationid=101210101&callback=_jsonpz1tdk5ia9fs",function(data){
+    		alert(data);
+    	});
     	$("#subStr").text(new RegExp("k=(\\w+)").exec(window.location.search)[1]);
     })
 });
