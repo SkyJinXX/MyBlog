@@ -1,3 +1,4 @@
+[//]: #(this is a comment.)
 ![Showdown][sd-logo]
 
 [![Build Status: Linux](https://travis-ci.org/showdownjs/showdown.svg?branch=master)](https://travis-ci.org/showdownjs/showdown)
@@ -12,7 +13,6 @@
 
 Showdown is a Javascript Markdown to HTML converter, based on the original works by John Gruber.
 Showdown can be used client side (in the browser) or server side (with NodeJs).
-
 ## Live DEMO
 
 Check a live Demo here http://demo.showdownjs.com/
