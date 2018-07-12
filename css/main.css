@@ -20,7 +20,7 @@ body{
 .real_content{
 	width: 60%;
 }
-.post_preview>a{
+a{
 	color:black;
 	text-decoration: none;
 }

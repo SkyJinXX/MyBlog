@@ -1,26 +1,6 @@
 $(document).ready(function() {
     //显示目录
-    $.getJSON("_posts/posts.json", function(posts) {
-    	console.log(posts);
-        $.each(posts, function(index, post) {
-            var content = 
-            	"<div class = 'post_preview'>" +
-            	"<a href='#' onclick = 'showPost(\"" + post.Fname + "\")'>" +
-            	"<h2 class = 'post_title'>" +
-                post.title +
-                "</h3>" +
-                "<p class = 'post_summary'>" + 
-                post.summary + 
-                "</p>" + 
-                "</a>" + 
-                "<span class = 'post_date'>" +
-                post.date +
-                "</span>" +
-                "</div>"
-                ;
-            $(".real_content").append(content);
-        })
-    })
+   	showPosts();
     //显示隐藏侧栏
     $(".toggle").click(function() {
         $(".nav").toggle();
@@ -47,7 +27,7 @@ $(document).ready(function() {
         $("#subStr").text(new RegExp("k=(\\w+)").exec(window.location.search)[1]);//故意写一行
     })
 });
-
+//显示文章
 function showPost(Fname) {
 
     //显示md文章
@@ -57,6 +37,32 @@ function showPost(Fname) {
         $('.real_content').html(html);
     });
 
+}
+//显示目录
+function showPosts(isClear){
+	if(isClear)
+		$(".real_content").html("");
+	 $.getJSON("_posts/posts.json", function(posts) {
+    	console.log(posts);
+        $.each(posts, function(index, post) {
+            var content = 
+            	"<div class = 'post_preview'>" +
+            	"<a href='#' onclick = 'showPost(\"" + post.Fname + "\")'>" +
+            	"<h2 class = 'post_title'>" +
+                post.title +
+                "</h3>" +
+                "<p class = 'post_summary'>" + 
+                post.summary + 
+                "</p>" + 
+                "</a>" + 
+                "<span class = 'post_date'>" +
+                post.date +
+                "</span>" +
+                "</div>"
+                ;
+            $(".real_content").append(content);
+        })
+    });
 }
 
 function keyEnter(e) {
