@@ -20,6 +20,13 @@ body{
 .real_content{
 	width: 60%;
 }
+.post_preview>a{
+	color:black;
+	text-decoration: none;
+}
+a:hover{
+	color: grey;
+}
 .nav{
 	background-color: #E01A4F;
 	border: 2px solid #E01A4F;

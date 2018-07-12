@@ -2,6 +2,7 @@
 	{
 		"title":"Showdown",
 		"date":"2018-7-12",
+		"summary":"Showdown is a Javascript Markdown to HTML converter, based on the original works by John Gruber.Showdown can be used client side (in the browser) or server side (with NodeJs).",
 		"Fname":"article_demo.md"
 	}
 ]

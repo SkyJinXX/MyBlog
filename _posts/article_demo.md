@@ -1,4 +1,4 @@
-[//]: #(this is a comment.)
+[//]: #(OK)
 ![Showdown][sd-logo]
 
 [![Build Status: Linux](https://travis-ci.org/showdownjs/showdown.svg?branch=master)](https://travis-ci.org/showdownjs/showdown)
