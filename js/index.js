@@ -31,7 +31,7 @@ $(document).ready(function() {
 function showPost(Fname) {
 
     //显示md文章
-    $.get("_posts/" + Fname, function(data) {
+    $.get("posts/" + Fname, function(data) {
         var converter = new showdown.Converter();
         var html = converter.makeHtml(data);
         $('.real_content').html(html);
@@ -42,7 +42,7 @@ function showPost(Fname) {
 function showPosts(isClear){
 	if(isClear)
 		$(".real_content").html("");
-	 $.getJSON("_posts/posts.json", function(posts) {
+	 $.getJSON("posts/posts.json", function(posts) {
     	console.log(posts);
         $.each(posts, function(index, post) {
             var content = 
