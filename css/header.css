@@ -14,10 +14,13 @@ header>.container{
 	border-radius: 10px;
 	border: 2px solid #53B3CB;
 }
-.container>h1{
+.container>a{
 	margin: 10px 20px;
 	align-self: flex-start;
 }
 .container>span{
 	margin:5px 20px;
+}
+h1{
+	margin: 0;
 }

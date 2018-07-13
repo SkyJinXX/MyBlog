@@ -1,6 +1,6 @@
 $(document).ready(function() {
     //显示目录
-   	showPosts();
+   	showPosts(false);
     //显示隐藏侧栏
     $(".toggle").click(function() {
         $(".nav").toggle();
@@ -58,7 +58,8 @@ function showPosts(isClear){
                 "<span class = 'post_date'>" +
                 post.date +
                 "</span>" +
-                "</div>"
+                "</div>"+
+                "<hr />"
                 ;
             $(".real_content").append(content);
         })
