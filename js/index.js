@@ -34,14 +34,14 @@ function showPost(Fname) {
     $.get("posts/" + Fname, function(data) {
         var converter = new showdown.Converter();
         var html = converter.makeHtml(data);
-        $('.real_content').html(html);
+        $('.content').html(html);
     });
 
 }
 //显示目录
 function showPosts(isClear){
 	if(isClear)
-		$(".real_content").html("");
+		$(".content").html("");
 	 $.getJSON("posts/posts.json", function(posts) {
     	console.log(posts);
         $.each(posts, function(index, post) {
@@ -61,7 +61,7 @@ function showPosts(isClear){
                 "</div>"+
                 "<hr />"
                 ;
-            $(".real_content").append(content);
+            $(".content").append(content);
         })
     });
 }

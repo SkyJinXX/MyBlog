@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Sky's Blog</title>
-	<!-- <link rel="stylesheet" type="text/css" href="css/header.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
-	<link rel="stylesheet" type="text/css" href="css/layout_grid.css">
-	<script src="js/jquery-1.8.0.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
-</head>
-<body>
-	<header>
-		
-	<div class="container">
-		<a href="#" onclick="showPosts(true)"><h1>Sky</h1></a>
-		<span><strong><i>Time is fleeting, but memories are forever.</i></strong></span>
-	</div>
-	</header>
-	<div class="main">
-		<div class="content">
-			<div class="real_content">
-				
-			</div>
-		</div>
-		<div class="nav" style="display: none;">
-			<input type="text" name="str" id="str" style="font-size: 30px" onkeydown="keyEnter(event)">
-			<button id="b1" style="height: 50px">GetEmail</button>
-			<button id="b2" style="height: 50px">GetX</button>
-			<br>
-			<span id="subStr" style="font-size: 30px;"></span>
-		</div>
 
-		<button class="toggle"></button>	
-	</div>	
-	<div class="footer">
-		<p>This is a footer.</p>
-	</div>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Sky's Blog</title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/header.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/layout_grid.css">
+    <script src="js/jquery-1.8.0.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 style="margin:0">Sky's <a href="#" onclick="showPosts(true)">Home</a></h1>
+    </header>
+
+    <div class="container">
+    	<section class="content"></section>
+    </div>
+    
+    <aside class="nav" style="display: none;">
+        <input type="text" name="str" id="str" style="font-size: 15px" onkeydown="keyEnter(event)">
+        <button id="b1" style="height: 50px">GetEmail</button>
+        <button id="b2" style="height: 50px">GetX</button>
+        <br>
+        <span id="subStr" style="font-size: 30px;"></span>
+    </aside>
+    
+    <button class="toggle"></button>
+    
+    <footer class="footer">
+        <p>Nothing is true, everything is permitted.</p>
+    </footer>
+</body>
 </html>
