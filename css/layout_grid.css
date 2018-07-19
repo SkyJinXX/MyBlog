@@ -119,6 +119,7 @@ blockquote{
 }
 pre{
 	word-break: normal;
+	overflow: scroll;
 }
 p{
 	word-wrap: break-word;
