@@ -1,15 +1,4 @@
 [//]: #(OK)
-![Showdown][sd-logo]
-
-[![Build Status: Linux](https://travis-ci.org/showdownjs/showdown.svg?branch=master)](https://travis-ci.org/showdownjs/showdown)
-[![Build Status: Windows](https://ci.appveyor.com/api/projects/status/github/showdownjs/showdown?branch=master&svg=true)](https://ci.appveyor.com/project/tivie/showdown/branch/master)
-[![npm version](https://badge.fury.io/js/showdown.svg)](http://badge.fury.io/js/showdown)
-[![Bower version](https://badge.fury.io/bo/showdown.svg)](http://badge.fury.io/bo/showdown)
-[![Join the chat at https://gitter.im/showdownjs/showdown](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/showdownjs/showdown?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Greenkeeper badge](https://badges.greenkeeper.io/showdownjs/showdown.svg)](https://greenkeeper.io/)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/tiviesantos)
-
-------
 
 Showdown is a Javascript Markdown to HTML converter, based on the original works by John Gruber.
 Showdown can be used client side (in the browser) or server side (with NodeJs).
