@@ -1,5 +1,5 @@
 html{
-	font-size: 20px;
+	font-size: 15px;
 }
 @media (min-width: 1050px) {
 	html{
@@ -76,7 +76,7 @@ header>span{
 	margin:10px 0 10px 5px;
 	outline: none;
 }
-@media (min-width: 360px) {
+@media (max-width: 360px) {
 	.toggle{
 		display: none;
 	}	
