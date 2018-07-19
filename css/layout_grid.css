@@ -117,3 +117,9 @@ blockquote{
     margin-bottom: 16px;
     margin:0;
 }
+pre{
+	word-break: normal;
+}
+p{
+	word-wrap: break-word;
+}
