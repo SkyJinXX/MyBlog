@@ -8,7 +8,7 @@ html{
 }
 body{
 	display: grid;
-	grid-template-columns: 9fr  auto 1%;
+	grid-template-columns: minmax(0%,9fr)  auto auto;
 	grid-template-rows: 2fr auto 1fr;
 	grid-template-areas: "header    header    header"
 						"container    nav    toggle"
@@ -35,15 +35,20 @@ header>span{
 
 .container{
 	grid-area: container;
-	display: flex;
 	justify-content: center;
 	background-color: #F9C22E;
 	border: 2px solid #F9C22E; 
 	border-radius: 10px;
 	margin: 10px 5px 10px 0;
 }
+@media (max-width: 360px) {
+	.container{
+		margin:10px 0 10px 0;
+	}
+}
 .content{
 	width: 80%;
+	margin: 0 auto;
 }
 .content>h1{
 	padding-bottom: 0.3em;
@@ -73,7 +78,7 @@ header>span{
 	grid-area: toggle;
 	border: 2px;
 	border-radius: 10px;
-	margin:10px 0 10px 5px;
+	margin:10px 0px 10px 5px;
 	outline: none;
 }
 @media (max-width: 360px) {
@@ -118,7 +123,6 @@ blockquote{
     margin:0;
 }
 pre{
-	word-break: normal;
 	overflow: auto;
 }
 p{

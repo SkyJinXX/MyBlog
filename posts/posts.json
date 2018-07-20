@@ -18,9 +18,9 @@
 		"Fname":"CSS_Grid.md"
 	},
 	{
-		"title":"换行测试",
-		"date":"2018-07-19",
-		"summary":"测试一下会不会自动换行",
-		"Fname":"test_break.md"
+		"title":"Grid布局之坑",
+		"date":"2018-07-20",
+		"summary":"pre标签和Grid布局的坑  记录一下这个坑了我差不多一天的（加上半梦半醒）的坑。  问题所在  pre标签设置为`overflow: auto;`的时候，宽度会超出父元素。导致父元素也变宽。 ",
+		"Fname":"Keng_1.md"
 	}
 ]
