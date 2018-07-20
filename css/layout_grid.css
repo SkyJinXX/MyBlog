@@ -17,7 +17,7 @@ body{
 }
 @media (max-width: 360px) {
 	body{
-		margin: 0px;
+		margin: 8px 0px;
 	}	
 }
 

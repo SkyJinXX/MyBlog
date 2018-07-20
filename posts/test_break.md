@@ -1,1 +1,0 @@
-Check a live Demo here http://demo.showdownjs.com/
