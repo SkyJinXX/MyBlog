@@ -17,7 +17,7 @@ body{
 }
 @media (max-width: 360px) {
 	body{
-		margin: 4px;
+		margin: 0px;
 	}	
 }
 
@@ -57,7 +57,7 @@ header>span{
 }
 @media (max-width: 360px) {
 	.content{
-		width: 95%;
+		width: 90%;
 	}	
 }
 .content>h1{
