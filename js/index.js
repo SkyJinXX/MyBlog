@@ -62,7 +62,6 @@ function showPosts(isClear){
 	            </div>
 	            <hr />`
                 ;
-            console.log(content);
             $(".content").append(content);
         })
     });
