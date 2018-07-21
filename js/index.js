@@ -46,21 +46,23 @@ function showPosts(isClear){
     	console.log(posts);
         $.each(posts, function(index, post) {
             var content = 
-            	"<div class = 'post_preview'>" +
-            	"<a href='#' onclick = 'showPost(\"" + post.Fname + "\")'>" +
-            	"<h2 class = 'post_title'>" +
-                post.title +
-                "</h3>" +
-                "<p class = 'post_summary'>" + 
-                post.summary + 
-                "</p>" + 
-                "</a>" + 
-                "<span class = 'post_date'>" +
-                post.date +
-                "</span>" +
-                "</div>"+
-                "<hr />"
+	        	`<div class = 'post_preview'>
+	        	<a href='#' onclick = 'showPost(\"${post.Fname}\")'>
+	        	<h2 class = 'post_title'>
+	            ${post.title}
+	            ${name}
+	            </h3>
+	            <p class = 'post_summary'>
+	            ${post.summary}
+	            </p>
+	            </a>
+	            <span class = 'post_date'>
+	            ${post.date}
+	            </span>
+	            </div>
+	            <hr />`
                 ;
+            console.log(content);
             $(".content").append(content);
         })
     });
