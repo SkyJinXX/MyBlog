@@ -9,8 +9,6 @@ function showPost(Fname) {
 }
 //显示目录
 function showPosts(isClear){
-	if(isClear)
-		$(".content").html("");
 	 $.getJSON("posts/posts.json", function(posts) {
         $.each(posts, function(index, post) {
             var content = 
@@ -29,7 +27,12 @@ function showPosts(isClear){
 	            </div>
 	            <hr />`
                 ;
-            $(".content").append(content);
+            //为了视觉效果，content元素内不能为空
+            if(isClear){
+                $(".content").html(content);
+                isClear = false;
+            }else
+                $(".content").append(content);
             //增加点击事件(日后记得改成herf)
             document.getElementById(post.Fname).addEventListener('click',e=>{
                 console.log(e.currentTarget.tagName);
