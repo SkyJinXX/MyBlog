@@ -1,0 +1,43 @@
+# JavaScript继承的几种方法 
+> new PrimaryStudent() ----> PrimaryStudent.prototype ----> Student.prototype ----> Object.prototype ----> null  
+### 人人平等
+这种我觉得最容易理解的。  
+`new PrimaryStudent()`是怎么继承`PrimaryStudent.prototype`的呢？
+我的理解是执行`new PrimaryStudent()`语句的时候,会
+
+1. 新建一个实例,让实例的`__proto__`属性指向`PrimaryStudent.prototype`
+2. 对该实例执行`PrimaryStudent()`函数体内的语句,给实例加一些本地的属性
+
+那么`PrimaryStudent.prototype` 继承 `Student.prototype`的流程也是一样
+
+1. 新建一个实例,让实例的`__proto__`属性指向`Student.prototype`
+2. 对该实例执行`Student()`函数体内的语句,给实例加一些本地的属性  
+
+最后的情况就是:  
+`new PrimaryStudent()`的共享对象是`PrimaryStudent.prototype`,改了后面的,前面的也得变  
+`PrimaryStudent.prototype` 的共享对象是 `Student.prototype`, 改了后面的,前面的也要变  
+那么,`new PrimaryStudent()`和`Student.prototype`之间的联系呢?  
+按照原型链的想法,想要根据`new PrimaryStudent()`找一个属性,要先在对象内部找,找不到,再去原型链上一个对象那里找, 找不到,那再上去找.  
+但是现在`new PrimaryStudent()`的上一个对象`PrimaryStudent.prototype`,好像已经有了它上一个对象的所有属性,**那么找一个找不到,后面的就都不用找了**,这好像和原型链的说明不太对..  
+### 用空函数  
+具体的方法就是廖雪峰JavaScript的教程(加个链接)里写的  
+这样实现的继承是符合原型链的说明的,可以一个一个往上找  
+但是它却让原型链里的元素不平等了!  
+`new PrimaryStudent()`的对象是由上一个构造函数new出来的,并且加上了之前所有的构造函数  
+`PrimaryStudent.prototype`却不是直接由上一个构造函数new出来,它只有上一个构造函数的prototype对象  
+---
+我目前只是知道方法,不知道在实际运用中会怎么样,可能随着进一步了解,会有不一样的想法吧  
+可能是我对'继承'这个概念的理解还不够. 现在只是先记录一下  
+---  
+### 真正原因
+看了下一节,突然明白了!  
+原型链里的元素不是平等的,最外面的`new PrimaryStudent()`是最终生成的对象,中间的`PrimaryStudent.prototype`虽然也是对象,但是! 如果我么们要完成的是像类继承的功能,那中间就不应该有对象!  
+我之前理解的继承是广义的继承,只要有办法拿到上一个对象的属性就可以了  
+Java等面向对象语言里的继承是不一样的.它有构造函数,类属性,继承动作.  
+为了用JavaScript实现Java等面向对象语言里的继承,那么就需要  
+
+* JS里的构造函数 来 当Java里的构造函数  
+* JS里的prototype 来 当Java里的类属性  
+* 用空函数加一些骚操作 来 当Java里的继承动作  
+
+所以JS里不好直接用'人人平等'的方法,`PrimaryStudent.prototype = new Student();`,这样相当于把Java里的构造函数也当作了Java里的类属性继承给下一代了

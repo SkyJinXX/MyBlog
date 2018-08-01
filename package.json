@@ -1,0 +1,27 @@
+{
+  "name": "MyBlog",
+  "version": "1.0.0",
+  "description": "Thank you for coming.  \r I use English.  \r Not because I am good at it.  \r Because I can't write Chinese in here.  \r QQ...",
+  "main": "index.js",
+  "dependencies": {
+    "showdown": "^1.8.6",
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkyJinXX/MyBlog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SkyJinXX/MyBlog/issues"
+  },
+  "homepage": "https://github.com/SkyJinXX/MyBlog#readme"
+}

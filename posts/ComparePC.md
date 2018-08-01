@@ -1,0 +1,19 @@
+# Webpack和Jekyll的关联
+在稍微用了用webpack之后，我又想找到它和Jekyll的关联，因为他们好像都有一个预处理的过程。  
+
+在Jekyll文档里说了（http://xshaun.github.io/jekyll-bootstrap/2014/08/27/jekyllbootstrap5-jekyll-introduction#section-2-6） 
+它是解析引擎，主要解析文章和模板语言。  
+我感觉它依然是在运行之前用Build命令解析一遍，然后生成静态的可以直接运行的网站。跟webpack做的事情好像差不多。  
+解析应该就算预编译吧。  
+
+
+Jekyll靠的是Ruby语言去做的，Webpack可能靠的是JavaScript。  
+或许JavaScript也能生成一个文章目录。  
+Ruby有Gem，Nodejs有npm，python有pip，都挺强的。  
+--- 
+当初不理解Jekyll是凭什么能搞出文章目录来,竟然通过学别的东西理解了，还是有一点成就感的。  
+--- 
+我又想了想，其实大家都在做预处理，npm script也是在发布之前做一堆事，那我或许可以用npm script来实现Jekyll的生成文章目录，创建各种文件夹和html文件。  
+但是...等一下！我一开始只是想要用require导入js，怎么想到这边来了？  
+
+但是...我又想了一下，如果我用npm script实现每次build的时候读取文章标题和时间和摘要并且生成一个json文件，那不就是当初那个答案里说的，写个shell来做这件事吗？居然又通了，好爽。
