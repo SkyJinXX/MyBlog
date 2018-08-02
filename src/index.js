@@ -1,9 +1,12 @@
 $(document).ready(function() {
     var show = require('./show');
+    var backListener = require('./back');
     //给Home加事件
     document.getElementById('home').addEventListener('click',()=>show.showPosts(true));
     //显示目录
    	show.showPosts(false);
+    //监听返回事件
+    backListener();
     //显示隐藏侧栏
     $(".toggle").click(function() {
         $(".nav").toggle();

@@ -1,0 +1,33 @@
+# 如何实现ajax的返回键功能  
+### 背景
+因为我一开始觉得如果能用ajax更换局部的内容，那可能体验会好一点。  
+但是问题出在只更换局部内容，url不会变，没法通过返回键来返回主页。  
+
+### 别人的方法
+一开始我先搜了怎么修改返回事件，虽然没有"返回事件",但是搜到了别的方法。  
+https://github.com/luokuning/blogs/issues/3  
+主要是利用History对象  
+
+* url的锚点改变了也会在history里加一个历史纪录  
+* url改变了会触发hashchange事件  
+* active history entry改变的时候会触发popstate事件  
+
+点返回键的时候，也会触发popstate事件，所以在事件里面写你希望返回按钮的功能就好了。  
+
+但是普通的点击锚点也会触发popstate事件，所以原文作者加了hashchange来增加state的值，来帮助popstate判断要不要返回。  
+### 我的问题
+普通点击锚点为什么会触发popstate，以及为什么state是null
+
+### 进一步了解popstate
+MDN是这样说的
+> 当活动历史记录条目更改时，将触发popstate事件。如果被激活的历史记录条目是通过对history.pushState（）的调用创建的，或者受到对history.replaceState（）的调用的影响，popstate事件的state属性包含历史条目的状态对象的副本。  
+
+第一句话我认为，就是说访问历史条目（active history entry）的时候，会触发popstate。  
+第二句话我认为，那个历史条目如果有state属性，那就会把state属性传给popstate。  
+
+所以，点击普通锚点链接，创建历史条目的同时访问该条目，触发popstate，正常来讲是没有state的，所以加个判断语句，就能分别。  
+但是，访问过一遍之后，在hashchange事件里用replacestate修改过后，再次访问，为什么还是null呢？  
+
+经过测试发现，设置完带锚点#的history的state值之后，返回，再点一次锚点，那个history的state值又变回null啦！  
+这就是为什么可以用state是不是null来判断。  
+大概是在页面里的操作算是重新打开吧，应该会清除state

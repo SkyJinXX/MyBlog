@@ -1,5 +1,6 @@
 //显示文章
 function showPost(Fname) {
+    console.log('showpost');
     $.get("posts/" + Fname, function(data) {
         var showdown  = require('showdown'),
         converter = new showdown.Converter(),
@@ -35,7 +36,6 @@ function showPosts(isClear){
                 $(".content").append(content);
             //增加点击事件(日后记得改成herf)
             document.getElementById(post.Fname).addEventListener('click',e=>{
-                console.log(e.currentTarget.tagName);
                 if(e.currentTarget.tagName==='A')
                     showPost(e.currentTarget.id);
             });
