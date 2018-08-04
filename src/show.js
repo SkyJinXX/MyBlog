@@ -1,20 +1,27 @@
 //显示文章
-function showPost(Fname) {
-    console.log('showpost');
-    $.get("posts/" + Fname, function(data) {
+function showPost(title, bDate, mDate) {
+    //修改标题
+    document.querySelector('header > h1').innerText = title;
+    //加上创建、修改时间
+    document.querySelector('header > span').innerText = 'Posted on '+bDate +' | Post modified: '+mDate;
+    //显示文章内容
+    $.get("posts/" + title +".md", function(data) {
         var showdown  = require('showdown'),
         converter = new showdown.Converter(),
         html      = converter.makeHtml(data);
         $('.content').html(html);
     });
+    console.log('显示文章');
 }
 //显示目录
 function showPosts(isClear){
-	 $.getJSON("posts/posts.json", function(posts) {
+    document.querySelector('header > h1').innerText = "Sky's Home";
+    document.querySelector('header > span').innerText = '';
+	 $.getJSON("posts.json", function(posts) {
         $.each(posts, function(index, post) {
             var content = 
 	        	`<div class = 'post_preview'>
-	        	<a href='#' id='${post.Fname}'>
+	        	<a href='#' id='pp${index}' mdate='${post.mDate}'>
 	        	<h2 class = 'post_title'>
 	            ${post.title}
 	            </h2>
@@ -23,7 +30,7 @@ function showPosts(isClear){
 	            </p>
 	            </a>
 	            <span class = 'post_date'>
-	            ${post.date}
+	            ${post.bDate}
 	            </span>
 	            </div>
 	            <hr />`
@@ -35,12 +42,15 @@ function showPosts(isClear){
             }else
                 $(".content").append(content);
             //增加点击事件(日后记得改成herf)
-            document.getElementById(post.Fname).addEventListener('click',e=>{
+            document.getElementById(`pp${index}`).addEventListener('click',e=>{
                 if(e.currentTarget.tagName==='A')
-                    showPost(e.currentTarget.id);
+                    showPost(e.currentTarget.querySelector('h2').innerText,
+                        e.currentTarget.parentNode.querySelector('.post_date').innerText,
+                        e.currentTarget.getAttribute('mdate'));
             });
         });
     });
+     console.log('显示目录');
 }
 module.exports = {
     showPost : showPost,

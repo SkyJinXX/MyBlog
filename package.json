@@ -4,14 +4,23 @@
   "description": "Thank you for coming.  \r I use English.  \r Not because I am good at it.  \r Because I can't write Chinese in here.  \r QQ...",
   "main": "index.js",
   "dependencies": {
+    "dateformat": "^3.0.3",
+    "nodemon": "^1.18.3",
+    "onchange": "^4.1.0",
     "showdown": "^1.8.6",
     "webpack": "^4.16.3",
     "webpack-cli": "^3.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack-dev-server": "^3.1.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "npm run generateJSON & webpack",
+    "generateJSON": "node ./customScript/generateJSON.js",
+    "watch:posts": "onchange \"./posts/*.md\" -- npm run generateJSON",
+    "watch:js": "onchange \"./src/*.js\" -- webpack",
+    "watch": "onchange \"./posts/*.md\" \"./src/*.js\" -- npm run build"
   },
   "repository": {
     "type": "git",

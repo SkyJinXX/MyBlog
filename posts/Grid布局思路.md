@@ -1,11 +1,17 @@
-##### v0.1
+<!---
+Grid思路    
+1. 定行列
+2. 放项目
+3. 调对齐 
+--->
+#### v0.1
 # Grid思路    
 1. 定行列
 2. 放项目
 3. 调对齐  
 
 # grid-template-areas  
-### 范例  
+## 范例  
 ```css
 .item-a {
   grid-area: header;
@@ -29,7 +35,7 @@
     "footer footer footer footer";
 }
 ```  
-### 作用  
+## 作用  
 统一管理item占位  
 # 关键
 网格框 含住 元素框

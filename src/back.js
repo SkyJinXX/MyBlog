@@ -14,7 +14,7 @@ module.exports = function() {
             //侦测是重新打开，还是重新激活
             var show = require('./show');
             show.showPosts(true);
-            
+            console.log('重新激活历史');
         }
     });
 }
