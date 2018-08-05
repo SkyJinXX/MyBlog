@@ -31,7 +31,7 @@ for file in $( git ls-files ); do echo $file; touch -t $(git --no-pager log --da
 我忽然想到，我的posts.json是有记录时间的，我可以用git找找历史提交中的posts.json。  
 哈哈哈哈哈哈哈哈哈，我真聪明。
 # 找回时间
-
+用`git reset`来把posts.json文件恢复到时间信息没乱的commit就可以了，再先手动把新的信息加进去
 # 更换方案
 
 # 感谢
