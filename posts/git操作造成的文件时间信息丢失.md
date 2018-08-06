@@ -33,7 +33,14 @@ for file in $( git ls-files ); do echo $file; touch -t $(git --no-pager log --da
 # 找回时间
 用`git reset`来把posts.json文件恢复到时间信息没乱的commit就可以了，再先手动把新的信息加进去
 # 更换方案
-
+## 创建时间
+**存到文件名里**
+git好像真的存不了创建时间，只能手动存了。  
+## 文章名
+**存文件名里**
+和创建时间合起来，方便直接从文件夹找文章。  
+## 修改时间
+准备靠`git --no-pager log --date=local -1 --format="%ct"`来存，但还不清楚能不能用npm script来完成  
 # 感谢
 RUO DOJO大佬的[从 Git 提交历史中「恢复」文件修改时间](https://blog.jamespan.me/2016/04/24/restore-files-modification-time-in-git)  
 搜中文搜到的唯一相关的文章
