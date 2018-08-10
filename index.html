@@ -10,13 +10,11 @@
     <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
     <link rel="stylesheet" type="text/css" href="css/layout_grid.css">
     <link rel="stylesheet" href="css/markdown.css">
-    <script src="dist/jquery-1.8.0.js"></script>
-    <script src="dist/bundle.js"></script>
 </head>
 
 <body>
     <header>
-        <h1 style="margin:0">Sky's <a href="#" id="home">Home</a></h1>
+        <h1 style="margin:0">{{title}}</h1>
         <span></span>
     </header>
 
@@ -25,17 +23,17 @@
     </div>
     
     <aside class="nav" style="display: none;">
-        <input type="text" name="str" id="str" style="font-size: 15px" onkeydown="keyEnter(event)">
-        <button id="b1" style="height: 50px">GetEmail</button>
-        <button id="b2" style="height: 50px">GetX</button>
+        <input type="text" name="str" id="str" style="font-size: 15px" v-model="substr">
         <br>
-        <span id="subStr" style="font-size: 30px;"></span>
+        <span id="subStr" style="font-size: 30px;">{{ substr }}</span>
     </aside>
     
     <button class="toggle"></button>
     
     <footer class="footer">
         <p>Nothing is true, everything is permitted.</p>
-    </footer>
+    </footer>    
+    <script src="dist/jquery-1.8.0.js"></script>
+    <script src="dist/bundle.js"></script>
 </body>
 </html>

@@ -5,9 +5,11 @@
   "main": "index.js",
   "dependencies": {
     "dateformat": "^3.0.3",
+    "jquery": "^3.3.1",
     "nodemon": "^1.18.3",
     "onchange": "^4.1.0",
     "showdown": "^1.8.6",
+    "vue": "^2.5.17",
     "webpack": "^4.16.3",
     "webpack-cli": "^3.1.0"
   },

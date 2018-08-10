@@ -1,7 +1,9 @@
+const $ = require('jquery');
 //显示文章
 function showPost(title, bDate, mDate) {
     //修改标题
-    document.querySelector('header > h1').innerText = title;
+    //document.querySelector('header > h1').innerText = title;
+    vm.title = title;
     //加上创建、修改时间
     document.querySelector('header > span').innerText = 'Posted on '+bDate +' | Post modified: '+mDate;
     //显示文章内容
@@ -15,7 +17,8 @@ function showPost(title, bDate, mDate) {
 }
 //显示目录
 function showPosts(isClear){
-    document.querySelector('header > h1').innerText = "Sky's Home";
+    //document.querySelector('header > h1').innerText = "Sky's Home";
+    vm.title = "Sky's Home";
     document.querySelector('header > span').innerText = '';
 	 $.getJSON("posts.json", function(posts) {
         $.each(posts, function(index, post) {
@@ -50,7 +53,10 @@ function showPosts(isClear){
             });
         });
     });
-     console.log('显示目录');
+    console.log('显示目录');
+    return {
+        title:"Sky's Home"
+    };
 }
 module.exports = {
     showPost : showPost,
