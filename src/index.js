@@ -8,7 +8,9 @@ import Vue from 'vue';
 window.vm = new Vue({
 el: 'header',
 data:{
-        title:"undefined"
+        title:"undefined",
+        seen : false,
+        time:""
     }
 });
 console.log(vm);

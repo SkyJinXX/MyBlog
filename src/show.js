@@ -5,7 +5,9 @@ function showPost(title, bDate, mDate) {
     //document.querySelector('header > h1').innerText = title;
     vm.title = title;
     //加上创建、修改时间
-    document.querySelector('header > span').innerText = 'Posted on '+bDate +' | Post modified: '+mDate;
+    //document.querySelector('header > span').innerText = 'Posted on '+bDate +' | Post modified: '+mDate;
+    vm.seen = true;
+    vm.time = 'Posted on '+bDate +' | Post modified: '+mDate;
     //显示文章内容
     $.get("posts/" + title +".md", function(data) {
         var showdown  = require('showdown'),
@@ -17,9 +19,13 @@ function showPost(title, bDate, mDate) {
 }
 //显示目录
 function showPosts(isClear){
+    //修改标题
     //document.querySelector('header > h1').innerText = "Sky's Home";
     vm.title = "Sky's Home";
-    document.querySelector('header > span').innerText = '';
+    //修改文章时间
+    //document.querySelector('header > span').innerText = '';
+    vm.time = '';
+    vm.seen = false;//消灭第二行的span，保持Home垂直居中
 	 $.getJSON("posts.json", function(posts) {
         $.each(posts, function(index, post) {
             var content = 
