@@ -1,15 +1,15 @@
 const $ = require('jquery');
 //显示文章
-function showPost(title, bDate, mDate) {
+function showPost(postInfo) {
     //修改标题
     //document.querySelector('header > h1').innerText = title;
-    vm.title = title;
+    vm.title = postInfo.title;
     //加上创建、修改时间
     //document.querySelector('header > span').innerText = 'Posted on '+bDate +' | Post modified: '+mDate;
     vm.seen = true;
-    vm.time = 'Posted on '+bDate +' | Post modified: '+mDate;
+    vm.time = 'Posted on '+postInfo.bTime +' | Post modified: '+postInfo.mTime;
     //显示文章内容
-    $.get("posts/" + title +".md", function(data) {
+    $.get("posts/" + postInfo.bTime+'_'+postInfo.title +".md", function(data) {
         var showdown  = require('showdown'),
         converter = new showdown.Converter(),
         html      = converter.makeHtml(data);
@@ -30,7 +30,7 @@ function showPosts(isClear){
         $.each(posts, function(index, post) {
             var content = 
 	        	`<div class = 'post_preview'>
-	        	<a href='#' id='pp${index}' mdate='${post.mDate}'>
+	        	<a href='#' id='pp${index}' mdate='${post.mTime}'>
 	        	<h2 class = 'post_title'>
 	            ${post.title}
 	            </h2>
@@ -39,7 +39,7 @@ function showPosts(isClear){
 	            </p>
 	            </a>
 	            <span class = 'post_date'>
-	            ${post.bDate}
+	            ${post.bTime}
 	            </span>
 	            </div>
 	            <hr />`
@@ -53,9 +53,11 @@ function showPosts(isClear){
             //增加点击事件(日后记得改成herf)
             document.getElementById(`pp${index}`).addEventListener('click',e=>{
                 if(e.currentTarget.tagName==='A')
-                    showPost(e.currentTarget.querySelector('h2').innerText,
-                        e.currentTarget.parentNode.querySelector('.post_date').innerText,
-                        e.currentTarget.getAttribute('mdate'));
+                    showPost({
+                        title:e.currentTarget.querySelector('h2').innerText,
+                        bTime:e.currentTarget.parentNode.querySelector('.post_date').innerText,
+                        mTime:e.currentTarget.getAttribute('mdate')
+                    });
             });
         });
     });

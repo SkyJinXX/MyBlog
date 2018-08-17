@@ -1,6 +1,3 @@
-# This is My Blog
-Thank you for coming.  
-I use English.  
-Not because I am good at it.  
-Because I can't write Chinese in here.  
-QQ...
+# Welcome!
+这是我用来边实践知识点，边写博客的地方。
+如果要用中文当文件名的话，记得让windows版的Git支持中文显示。
