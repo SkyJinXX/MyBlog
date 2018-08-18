@@ -1,15 +1,16 @@
 const $ = require('jquery');
+const dateformat = require('dateformat');
 //显示文章
-function showPost(postInfo) {
+function showPost(post) {
     //修改标题
     //document.querySelector('header > h1').innerText = title;
-    vm.title = postInfo.title;
+    vm.title = post.title;
     //加上创建、修改时间
     //document.querySelector('header > span').innerText = 'Posted on '+bDate +' | Post modified: '+mDate;
     vm.seen = true;
-    vm.time = 'Posted on '+postInfo.bTime +' | Post modified: '+postInfo.mTime;
+    vm.time = 'Posted on '+dateformat(new Date(parseInt(post.bTime)),'isoDate') +' | Post modified: '+dateformat(new Date(parseInt(post.mTime)),'isoDate');
     //显示文章内容
-    $.get("posts/" + postInfo.bTime+'_'+postInfo.title +".md", function(data) {
+    $.get("posts/" + post.fileName, function(data) {
         var showdown  = require('showdown'),
         converter = new showdown.Converter(),
         html      = converter.makeHtml(data);
@@ -28,9 +29,11 @@ function showPosts(isClear){
     vm.seen = false;//消灭第二行的span，保持Home垂直居中
 	 $.getJSON("posts.json", function(posts) {
         $.each(posts, function(index, post) {
+            bDate = dateformat(new Date(parseInt(post.bTime)),'isoDate');
+            mDate = dateformat(new Date(parseInt(post.mTime)),'isoDate');
             var content = 
 	        	`<div class = 'post_preview'>
-	        	<a href='#' id='pp${index}' mdate='${post.mTime}'>
+	        	<a href='#' id='pp${index}'>
 	        	<h2 class = 'post_title'>
 	            ${post.title}
 	            </h2>
@@ -39,7 +42,7 @@ function showPosts(isClear){
 	            </p>
 	            </a>
 	            <span class = 'post_date'>
-	            ${post.bTime}
+	            ${bDate}
 	            </span>
 	            </div>
 	            <hr />`
@@ -54,9 +57,10 @@ function showPosts(isClear){
             document.getElementById(`pp${index}`).addEventListener('click',e=>{
                 if(e.currentTarget.tagName==='A')
                     showPost({
-                        title:e.currentTarget.querySelector('h2').innerText,
-                        bTime:e.currentTarget.parentNode.querySelector('.post_date').innerText,
-                        mTime:e.currentTarget.getAttribute('mdate')
+                        title:post.title,
+                        bTime:post.bTime,
+                        mTime:post.mTime,
+                        fileName:post.fileName
                     });
             });
         });

@@ -33,7 +33,6 @@ module.exports = function(dirName){
 		encoding:'utf8',
 		cwd:dirName
 	}).split(/\r?\n/);
-	//console.log(rawArr);
 	for(index in rawArr){
 		if(regExp.test(rawArr[index]))
 			filesToCheck.push(rawArr[index].split(/\s+/)[3]);
