@@ -4,6 +4,7 @@
   "description": "Thank you for coming.  \r I use English.  \r Not because I am good at it.  \r Because I can't write Chinese in here.  \r QQ...",
   "main": "index.js",
   "dependencies": {
+    "chokidar": "^2.0.4",
     "dateformat": "^3.0.3",
     "jquery": "^3.3.1",
     "onchange": "^4.1.0",
@@ -21,7 +22,7 @@
     "generateJSON": "node ./customScript/generateJSON.js",
     "watch:posts": "onchange \"./posts/*.md\" -- npm run generateJSON",
     "watch:js": "onchange \"./src/*.js\" -- webpack",
-    "watch": "onchange \"./posts/*.md\" \"./src/*.js\" -w -v -- npm run build"
+    "watch": "node ./customScript/watch.js"
   },
   "repository": {
     "type": "git",
