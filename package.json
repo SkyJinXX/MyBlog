@@ -7,7 +7,6 @@
     "chokidar": "^2.0.4",
     "dateformat": "^3.0.3",
     "jquery": "^3.3.1",
-    "onchange": "^4.1.0",
     "showdown": "^1.8.6",
     "vue": "^2.5.17",
     "webpack": "^4.16.3",
