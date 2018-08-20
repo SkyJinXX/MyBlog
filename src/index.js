@@ -21,7 +21,7 @@ show.showPosts(false).title;
 backListener();
 //显示隐藏侧栏
 $(".toggle").click(function() {
-    $(".nav").toggle();
+    $(".sidebar").toggle();
 })
 
 

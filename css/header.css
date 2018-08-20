@@ -1,4 +1,5 @@
 .title{
+	grid-area: title;
 	border: 2px solid #53B3CB;
 	border-radius: 10px;
 	background-color: #53B3CB;
@@ -8,19 +9,10 @@ header>span{
 	margin:5px 20px;
 }
 .time{
-	display: flex;
-	flex-direction: column;
-}
-.bDate{
+	grid-area: time;
 	border: 2px solid #F15946;
 	border-radius: 10px;
 	background-color: #F15946;
 	padding: 3px 3px;	
-	margin-bottom: 5px;
-}
-.mDate{
-	border: 2px solid #F15946;
-	border-radius: 10px;
-	background-color: #F15946;
-	padding: 3px 3px;	
+	width: fit-content;
 }

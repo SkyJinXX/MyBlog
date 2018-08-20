@@ -8,8 +8,8 @@ function showPost(post) {
     //加上创建、修改时间
     //document.querySelector('header > span').innerText = 'Posted on '+bDate +' | Post modified: '+mDate;
     vm.seen = true;
-    vm.bDate = dateformat(new Date(parseInt(post.bTime)),'isoDate');
-    vm.mDate = dateformat(new Date(parseInt(post.mTime)),'isoDate');
+    vm.bDate = dateformat(new Date(parseInt(post.bTime)), "longDate");
+    //vm.mDate = dateformat(new Date(parseInt(post.mTime)),'isoDate');
     //显示文章内容
     $.get("posts/" + post.fileName, function(data) {
         var showdown  = require('showdown'),
@@ -30,8 +30,7 @@ function showPosts(isClear){
     vm.seen = false;//消灭第二行的span，保持Home垂直居中
 	 $.getJSON("posts.json", function(posts) {
         $.each(posts, function(index, post) {
-            bDate = dateformat(new Date(parseInt(post.bTime)),'isoDate');
-            mDate = dateformat(new Date(parseInt(post.mTime)),'isoDate');
+            bDate = dateformat(new Date(parseInt(post.bTime)), "longDate");
             var content = 
 	        	`<div class = 'post_preview'>
 	        	<a href='#' id='pp${index}'>

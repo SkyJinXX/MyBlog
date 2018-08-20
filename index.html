@@ -19,12 +19,7 @@
             <h1 style="margin:0">{{title}}</h1>
         </div>
         <div class="time" v-if="seen">
-            <div class="bDate">
-                <span>创建日期：{{bDate}}</span>
-            </div>
-            <div class="mDate">
-                <span>修改日期：{{mDate}}</span>
-            </div>           
+            <span>{{bDate}}</span>       
         </div>
         
     </header>
@@ -33,10 +28,8 @@
     </div>
     <section class="content"></section>
     
-    <aside class="nav" style="display: none;">
-        <input type="text" name="str" id="str" style="font-size: 15px" v-model="substr">
-        <br>
-        <span id="subStr" style="font-size: 30px;">{{ substr }}</span>
+    <aside class="sidebar" display="none">
+        <span id="subStr"">这里我想放目录</span>
     </aside>
     
     
