@@ -1,26 +1,26 @@
-header{
-	height: 100px;
-	display: block;
+.title{
 	border: 2px solid #53B3CB;
 	border-radius: 10px;
 	background-color: #53B3CB;
+	padding: 10px 10px;
 }
-header>.container{
-	background-color: #53B3CB;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-	height: 100px;
-	border-radius: 10px;
-	border: 2px solid #53B3CB;
-}
-.container>a{
-	margin: 10px 20px;
-	align-self: flex-start;
-}
-.container>span{
+header>span{
 	margin:5px 20px;
 }
-h1{
-	margin: 0;
+.time{
+	display: flex;
+	flex-direction: column;
+}
+.bDate{
+	border: 2px solid #F15946;
+	border-radius: 10px;
+	background-color: #F15946;
+	padding: 3px 3px;	
+	margin-bottom: 5px;
+}
+.mDate{
+	border: 2px solid #F15946;
+	border-radius: 10px;
+	background-color: #F15946;
+	padding: 3px 3px;	
 }

@@ -8,7 +8,8 @@ function showPost(post) {
     //加上创建、修改时间
     //document.querySelector('header > span').innerText = 'Posted on '+bDate +' | Post modified: '+mDate;
     vm.seen = true;
-    vm.time = 'Posted on '+dateformat(new Date(parseInt(post.bTime)),'isoDate') +' | Post modified: '+dateformat(new Date(parseInt(post.mTime)),'isoDate');
+    vm.bDate = dateformat(new Date(parseInt(post.bTime)),'isoDate');
+    vm.mDate = dateformat(new Date(parseInt(post.mTime)),'isoDate');
     //显示文章内容
     $.get("posts/" + post.fileName, function(data) {
         var showdown  = require('showdown'),

@@ -9,18 +9,29 @@
     <!-- <link rel="stylesheet" type="text/css" href="css/header.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
     <link rel="stylesheet" type="text/css" href="css/layout_grid.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" href="css/markdown.css">
 </head>
 
 <body>
     <header>
-        <h1 style="margin:0">{{title}}</h1>
-        <span v-if="seen">{{time}}</span>
+        <div class="title">
+            <h1 style="margin:0">{{title}}</h1>
+        </div>
+        <div class="time" v-if="seen">
+            <div class="bDate">
+                <span>创建日期：{{bDate}}</span>
+            </div>
+            <div class="mDate">
+                <span>修改日期：{{mDate}}</span>
+            </div>           
+        </div>
+        
     </header>
-
-    <div class="container">
-    	<section class="content"></section>
+    <div class="toggle">
+        <span>-</span>
     </div>
+    <section class="content"></section>
     
     <aside class="nav" style="display: none;">
         <input type="text" name="str" id="str" style="font-size: 15px" v-model="substr">
@@ -28,7 +39,6 @@
         <span id="subStr" style="font-size: 30px;">{{ substr }}</span>
     </aside>
     
-    <button class="toggle"></button>
     
     <footer class="footer">
         <p>暂时没有了</p>

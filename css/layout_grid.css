@@ -8,57 +8,61 @@ html{
 }
 body{
 	display: grid;
-	grid-template-columns: minmax(0%,9fr)  auto auto;
-	grid-template-rows: 2fr auto 1fr;
-	grid-template-areas: "header    header    header"
-						"container    nav    toggle"
-						"footer    footer    footer";
+	grid-template-columns: 2fr minmax(0%,9fr) 2fr;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: ".    header    toggle"
+						".    container    nav"
+						".    footer    .";
 	background-color: #000000;
+	margin: 5px;
 }
 @media (max-width: 360px) {
 	body{
-		margin: 8px 0px;
+		margin: 5px 0px;
 	}	
 }
 
 header{
 	grid-area: header;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
 	height: auto;
-	border: 2px solid #53B3CB;
-	border-radius: 10px;
-	background-color: #53B3CB;
-}
-header>a{
-	margin: 10px 20px;
-}
-header>span{
-	margin:5px 20px;
+	width: auto;
+	margin:5px 5px;
 }
 
-.container{
+.toggle{
+	position: fixed;
+	right: 17px;
+	bottom:20px;
+	border: 2px solid #E01A4F;
+	border-radius: 10px;
+	background-color: #E01A4F;
+	padding: 10px 10px;	
+	width: fit-content;
+	height: fit-content;
+	justify-self:end;
+}
+@media (max-width: 360px) {
+	.toggle{
+		display: none;
+	}	
+}
+
+.content{
 	grid-area: container;
 	justify-content: center;
 	background-color: #F9C22E;
 	border: 2px solid #F9C22E; 
 	border-radius: 10px;
-	margin: 10px 5px 10px 0;
-}
-@media (max-width: 360px) {
-	.container{
-		margin:10px 0 10px 0;
-	}
-}
-.content{
-	width: 80%;
-	margin: 0 auto;
+	margin: 5px 5px;
+	padding: 10px 20px 10px 20px;
+	width: auto;
 }
 @media (max-width: 360px) {
 	.content{
-		width: 90%;
+		margin:10px 0 10px 0;
 	}	
 }
 .content>h1{
@@ -81,23 +85,8 @@ header>span{
 	border: 2px solid #E01A4F;
 	border-radius: 10px;
 	flex:auto;
-	margin: 10px 5px 10px 5px;	
+	margin: 5px 5px 5px 5px;	
 }
-
-
-.toggle{
-	grid-area: toggle;
-	border: 2px;
-	border-radius: 10px;
-	margin:10px 0px 10px 5px;
-	outline: none;
-}
-@media (max-width: 360px) {
-	.toggle{
-		display: none;
-	}	
-}
-
 
 .footer{
 	grid-area: footer;
@@ -106,6 +95,7 @@ header>span{
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;
+	display: none;
 }
 
 h1{
