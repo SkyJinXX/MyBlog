@@ -4,7 +4,7 @@ header .title{
 	border-radius: 10px;
 	background-color: #53B3CB;
 	padding: 10px 10px;
-	margin: 0 5px;
+	margin: 0 5px 0 0;
 }
 header .time{
 	grid-area: time;
