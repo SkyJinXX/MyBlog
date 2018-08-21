@@ -4,9 +4,7 @@ header .title{
 	border-radius: 10px;
 	background-color: #53B3CB;
 	padding: 10px 10px;
-}
-header span{
-	margin:5px 20px;
+	margin: 0 5px;
 }
 header .time{
 	grid-area: time;
@@ -15,4 +13,5 @@ header .time{
 	background-color: #F15946;
 	padding: 3px 3px;	
 	width: fit-content;
+	margin: 0 5px;
 }

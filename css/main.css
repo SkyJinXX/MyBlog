@@ -1,30 +1,93 @@
+html{
+	font-size: 15px;
+}
+@media (min-width: 1050px) {
+	html{
+		font-size: 17px;
+	}	
+}
+
 body{
+	display: grid;
+	grid-template-columns: 2fr minmax(0%,9fr) 2fr;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: ".    header    ."
+						".    container    ."
+						".    footer    .";
 	background-color: #000000;
+	margin: 5px;
 }
-.main{
-	background-color: #000000;
-	margin: 10px 0px;
-	display: flex;
-	justify-content: space-between;		
+@media (max-width: 360px) {
+	body{
+		grid-template-columns: 0 minmax(0%,9fr) 0;
+		margin: 5px 0px;
+	}	
+}
+
+header{
+	grid-area: header;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+	grid-template-areas: "title    ."
+						"title    time";
+	justify-content: center;
+	height: auto;
+	width: auto;
+	margin:5px 5px;
+}
+@media (max-width: 360px) {
+	header{
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+		grid-template-areas: "title    ."
+							"time    .";
+		grid-gap: 10px;
+		margin:5px 0;
+	}	
 }
 
 
-.content{
-	background-color: #F9C22E;
-	border: 2px solid #F9C22E; 
-	border-radius: 10px;
-	flex:auto;
-	width:80%;
+section{
+	grid-area: container;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+	margin:5px 5px;
 }
-.real_content{
-	width: 60%;
+@media (max-width: 360px) {
+	section{
+		margin:5px 0;
+	}	
 }
-.real_content>h1{
-	padding-bottom: 0.3em;
-	border-bottom: 1px solid #F9A000;
+
+
+
+aside{
+	position: fixed;
+	top:67px;
+	left: 0px;
+	margin: 5px 5px 5px 5px;	
+}
+@media (max-width: 360px) {
+	aside{
+		display: none;
+	}	
+}
+
+footer{
+	grid-area: footer;
+	background-color: #F15946;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	display: none;
+}
+
+
+h1{
+	font-size: 2rem;
 }
 a{
 	color:black;
@@ -32,14 +95,6 @@ a{
 }
 a:hover{
 	color: grey;
-}
-.post_preview{
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-}
-.post_date{
-	align-self: flex-end;	
 }
 hr{
 	margin-top: 20px;
@@ -56,35 +111,18 @@ blockquote{
     margin-bottom: 16px;
     margin:0;
 }
-
-.nav{
-	background-color: #E01A4F;
-	border: 2px solid #E01A4F;
-	border-radius: 10px;
-	flex:auto;
-
-	margin-left: 5px;
+pre{
+	overflow: auto;
 }
-
-
-.toggle{
-	border: 2px;
-	border-radius: 10px;
-	margin-left: 5px;
-	outline: none;
+p{
+	word-wrap: break-word;
 }
-
-
-.footer{
-	background-color: #F15946;
-	border: 2px solid #F15946;
+::-webkit-scrollbar{
+	width: 10px;
+	background-color: #545454;
 	border-radius: 10px;
-
-	display: flex;
-	justify-content: center;
 }
-
-
-/*少看电脑多喝奶茶
-wendyma
-20180714*/
+::-webkit-scrollbar-thumb{
+	background-color: #53b3cb;
+	border-radius: 10px;
+}

@@ -9,12 +9,12 @@ function showPost(post) {
     //document.querySelector('header > span').innerText = 'Posted on '+bDate +' | Post modified: '+mDate;
     vm.seen = true;
     vm.bDate = dateformat(new Date(parseInt(post.bTime)), "longDate");
-    //vm.mDate = dateformat(new Date(parseInt(post.mTime)),'isoDate');
     //显示文章内容
     $.get("posts/" + post.fileName, function(data) {
         var showdown  = require('showdown'),
         converter = new showdown.Converter(),
         html      = converter.makeHtml(data);
+        html = '<article>'+html+'</article>';
         $('.content').html(html);
     });
     console.log('显示文章');
@@ -32,20 +32,17 @@ function showPosts(isClear){
         $.each(posts, function(index, post) {
             bDate = dateformat(new Date(parseInt(post.bTime)), "longDate");
             var content = 
-	        	`<div class = 'post_preview'>
-	        	<a href='#' id='pp${index}'>
+	        	`<a href='#' id='pp${index}' class = 'post_preview'>
 	        	<h2 class = 'post_title'>
 	            ${post.title}
 	            </h2>
 	            <p class = 'post_summary'>
 	            ${post.summary}
 	            </p>
-	            </a>
 	            <span class = 'post_date'>
 	            ${bDate}
-	            </span>
-	            </div>
-	            <hr />`
+	            </span>                
+                </a>`
                 ;
             //为了视觉效果，content元素内不能为空
             if(isClear){
