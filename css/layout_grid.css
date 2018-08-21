@@ -46,29 +46,11 @@ header{
 	}	
 }
 
-.toggle{
-	position: fixed;
-	right: 17px;
-	bottom:20px;
-	border: 2px solid #E01A4F;
-	border-radius: 10px;
-	background-color: #E01A4F;
-	padding: 10px 10px;	
-	width: fit-content;
-	height: fit-content;
-	justify-self:end;
-}
-@media (max-width: 360px) {
-	.toggle{
-		display: none;
-	}	
-}
 
 .content{
 	grid-area: container;
 	justify-content: center;
-	background-color: #F9C22E;
-	border: 2px solid #F9C22E; 
+	background-color: #F9C22E; 
 	border-radius: 10px;
 	margin: 5px 5px;
 	padding: 10px 20px 10px 20px;
@@ -95,21 +77,20 @@ header{
 
 
 .sidebar{
-	display: none;
 	position: fixed;
-	top:0;
-	right: 0;
-	background-color: #E01A4F;
-	border: 2px solid #E01A4F;
-	border-radius: 10px;
-	flex:auto;
+	top:67px;
+	left: 0px;
 	margin: 5px 5px 5px 5px;	
+}
+@media (max-width: 360px) {
+	.sidebar{
+		display: none;
+	}	
 }
 
 .footer{
 	grid-area: footer;
 	background-color: #F15946;
-	border: 2px solid #F15946;
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;

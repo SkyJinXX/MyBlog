@@ -1,14 +1,14 @@
-.title{
+header .title{
 	grid-area: title;
 	border: 2px solid #53B3CB;
 	border-radius: 10px;
 	background-color: #53B3CB;
 	padding: 10px 10px;
 }
-header>span{
+header span{
 	margin:5px 20px;
 }
-.time{
+header .time{
 	grid-area: time;
 	border: 2px solid #F15946;
 	border-radius: 10px;

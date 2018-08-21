@@ -19,10 +19,6 @@ console.log(vm);
 show.showPosts(false).title;
 //监听返回事件
 backListener();
-//显示隐藏侧栏
-$(".toggle").click(function() {
-    $(".sidebar").toggle();
-})
 
 
 

@@ -1,0 +1,87 @@
+.author{
+
+	border-radius: 10px;
+	width: fit-content;
+	transition: 1s;
+}
+.author>img{
+	border-radius: 10px;
+	max-width: 40px;
+	height: auto;
+	transform: rotate(-90deg);
+	transition: 1s;
+}
+.author>.name{
+	display: none;
+	margin:3px 0px;
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 800;
+}
+.author>.links-of-author{
+	display: none;
+	width: 0;
+	height: 0;
+	margin:10px 0 0 0;
+	padding: 0;
+	text-align: center;
+	transition: 1s;
+}
+.author:hover{
+	padding: 10px;
+	background-color: #E01A4F;
+}
+.author:hover>img{
+	max-width: 140px;
+	transform: rotate(0deg);
+}
+.author:hover>p{
+	display:block;
+}
+.author:hover>.links-of-author{
+	display: block;
+	width: auto;
+	height: auto;
+}
+.links-of-author>li{
+	display: inline-block;
+}
+.links-of-author a{
+	font-size: 25px;
+}
+
+
+.menu{
+	padding: 0;
+}
+.menu>li{
+	display: flex;
+	margin:5px 0px;
+}
+.menu-text{
+	display: flex;
+	align-items: center;
+	margin:0 5px;
+	background-color: #F15946;
+	border-radius: 10px;
+	font-size: 1.5rem;
+	font-weight: 800;
+	transition:all 1s;
+	z-index: 1;
+	max-width: 0;
+}
+.menu a{
+	display: inline-block;
+	text-align: center;
+	background-color: #F15946;
+	border-radius: 10px;
+	padding: 5px;
+	height: 30px;
+	width: 30px;
+	font-size: 25px;
+	z-index: 100;
+}
+.menu a:hover+.menu-text{
+	padding: 5px;
+	max-width: 1000px;
+}
