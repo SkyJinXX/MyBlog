@@ -67,8 +67,10 @@
 	font-size: 1.5rem;
 	font-weight: 800;
 	transition:all 1s;
-	z-index: 1;
 	max-width: 0;
+	overflow: hidden;
+	/*transform:scale(0,1);*/
+	/*transform-origin: top left;*/
 }
 .menu a{
 	display: inline-block;
@@ -79,9 +81,9 @@
 	height: 30px;
 	width: 30px;
 	font-size: 25px;
-	z-index: 100;
 }
 .menu a:hover+.menu-text{
 	padding: 5px;
 	max-width: 1000px;
+	transform: scale(1,1);
 }

@@ -183,7 +183,18 @@ eval("module.exports = function() {\r\n    //先给当前页面加个state\r\n  
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm.js\");\nvar show = __webpack_require__(/*! ./show */ \"./src/show.js\");\r\nvar backListener = __webpack_require__(/*! ./back */ \"./src/back.js\");\r\nconst $ = __webpack_require__(/*! jquery */ \"jquery\");\r\n//const Vue = require('vue');\r\n\r\n\r\n//试一下Vue\r\nwindow.vm = new vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\r\nel: 'header',\r\ndata:{\r\n        title:\"undefined\",\r\n        seen : false,\r\n        time:\"\"\r\n    }\r\n});\r\nconsole.log(vm);\r\n\r\n//显示目录\r\nshow.showPosts(false).title;\r\n//监听返回事件\r\nbackListener();\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm.js\");\nvar show = __webpack_require__(/*! ./show */ \"./src/show.js\");\r\nvar backListener = __webpack_require__(/*! ./back */ \"./src/back.js\");\r\nconst scrollListener = __webpack_require__(/*! ./scroll */ \"./src/scroll.js\");\r\nconst $ = __webpack_require__(/*! jquery */ \"jquery\");\r\n//const Vue = require('vue');\r\n\r\n\r\n//试一下Vue\r\nwindow.vm = new vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\r\nel: 'header',\r\ndata:{\r\n        title:\"undefined\",\r\n        seen : false,\r\n        time:\"\"\r\n    }\r\n});\r\nconsole.log(vm);\r\n\r\n//显示目录\r\nshow.showPosts(false).title;\r\n//监听返回事件\r\nbackListener();\r\n//绑定滚动事件，上滚出现侧栏，下滚消失\r\nscrollListener();\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/scroll.js":
+/*!***********************!*\
+  !*** ./src/scroll.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function(){\r\n\tlet t = 0,\r\n\t\tp = 0;\r\n\t$(window).scroll(function(e){\r\n\t\tp = $(this).scrollTop();\r\n\t\tif(p>t){\r\n\t\t\t$('.sidebar').addClass('is-hidden')\r\n\t\t}else{\r\n\t\t\t$('.sidebar').removeClass('is-hidden');\r\n\t\t}\r\n\t\tt = p;\r\n\t})\r\n}\n\n//# sourceURL=webpack:///./src/scroll.js?");
 
 /***/ }),
 

@@ -1,5 +1,6 @@
 html{
 	font-size: 15px;
+	height: 100%;
 }
 @media (min-width: 1050px) {
 	html{
@@ -16,6 +17,7 @@ body{
 						".    footer    .";
 	background-color: #000000;
 	margin: 5px;
+	height: 100%;
 }
 @media (max-width: 415px) {
 	body{
@@ -53,7 +55,7 @@ section{
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin:5px 5px;
+	margin:5px 5px;	
 }
 @media (max-width: 415px) {
 	section{
@@ -69,11 +71,17 @@ aside{
 	top:67px;
 	left: 0px;
 	margin: 5px 5px 5px 5px;	
+	transition: all 1s;
 }
 @media (max-width: 415px) {
 	aside{
 		display: none;
 	}	
+}
+.is-hidden{
+	transform: translateY(-40%);
+	/*top:0;*/
+	opacity: 0;
 }
 
 footer{
