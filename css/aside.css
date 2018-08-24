@@ -2,30 +2,37 @@
 
 	border-radius: 10px;
 	width: fit-content;
-	transition: 1s;
+	transition:all 1s;
 }
 .author>img{
 	border-radius: 10px;
 	max-width: 40px;
 	height: auto;
 	transform: rotate(-90deg);
-	transition: 1s;
+	transition:inherit;
 }
 .author>.name{
-	display: none;
+	transform: rotate(-90deg) scale(0,0);
+	max-width: 0;
+	max-height: 0;
+	overflow: hidden;
 	margin:3px 0px;
 	text-align: center;
 	font-size: 1.2rem;
 	font-weight: 800;
+	transition: inherit;
+	white-space: nowrap;
 }
 .author>.links-of-author{
-	display: none;
-	width: 0;
-	height: 0;
+	transform: rotate(-90deg) scale(0,0);
+	max-width: 0;
+	max-height: 0;
+	overflow: hidden;
 	margin:10px 0 0 0;
 	padding: 0;
 	text-align: center;
-	transition: 1s;
+	transition:inherit;
+	white-space: nowrap;
 }
 .author:hover{
 	padding: 10px;
@@ -35,13 +42,15 @@
 	max-width: 140px;
 	transform: rotate(0deg);
 }
-.author:hover>p{
-	display:block;
+.author:hover>.name{
+	max-width: 140px;
+	max-height: 60px;
+	transform: rotate(0deg) scale(1,1);
 }
 .author:hover>.links-of-author{
-	display: block;
-	width: auto;
-	height: auto;
+	max-width: 140px;
+	max-height: 60px;
+	transform: rotate(0deg) scale(1,1);
 }
 .links-of-author>li{
 	display: inline-block;
@@ -84,6 +93,6 @@
 }
 .menu a:hover+.menu-text{
 	padding: 5px;
-	max-width: 1000px;
+	max-width: 300px;
 	transform: scale(1,1);
 }
