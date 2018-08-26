@@ -26,11 +26,16 @@ article h1{
 .post_date{
 	align-self: flex-end;
 }
-section>article{
+article{
 	background-color: #F9C22E; 
 	border-radius: 10px;
 	margin:5px 0px;
 	padding: 10px 20px 10px 20px;
 	width: fit-content;
 	min-width: 50%;
+}
+@media (max-width: 415px) {
+	article{
+		width: auto;
+	}	
 }
