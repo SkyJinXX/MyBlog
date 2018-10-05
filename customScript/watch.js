@@ -8,7 +8,7 @@ var dirName = path.join(__dirname, '../posts');
 var dirName_posix = path.posix.join(__dirname, '../posts');//为了能用glob patterns，要废弃Back-slashes
 var mdFiles_posix = path.posix.join(dirName_posix, '*.md');//为了能用glob patterns，要废弃Back-slashes
 var srcJsFiles_posix = path.posix.join(__dirname, '../src/*.js');
-console.log(srcJsFiles_posix);
+console.log(mdFiles_posix);
 function addListener(){
 	var watcher = chokidar.watch([mdFiles_posix,srcJsFiles_posix], {ignored: /(^|[\/\\])\../})
 	.on('ready', function(){

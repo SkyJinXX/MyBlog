@@ -17,4 +17,4 @@ module.exports = function() {
             console.log('重新激活历史');
         }
     });
-}
+};

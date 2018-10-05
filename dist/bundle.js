@@ -171,7 +171,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = function() {\r\n    //先给当前页面加个state\r\n    this.history.replaceState('hasHash', '', '');\r\n    //监听hashchange事件\r\n    window.addEventListener('hashchange', function() {\r\n\r\n        //为当前导航页附加一个tag\r\n        this.history.replaceState('hasHash', '', '');\r\n\r\n    }, false);\r\n    //监听重新激活历史记录\r\n    window.addEventListener('popstate', function(e) {\r\n        if (e.state) {\r\n            //侦测是重新打开，还是重新激活\r\n            var show = __webpack_require__(/*! ./show */ \"./src/show.js\");\r\n            show.showPosts(true);\r\n            console.log('重新激活历史');\r\n        }\r\n    });\r\n}\n\n//# sourceURL=webpack:///./src/back.js?");
+eval("module.exports = function() {\r\n    //先给当前页面加个state\r\n    this.history.replaceState('hasHash', '', '');\r\n    //监听hashchange事件\r\n    window.addEventListener('hashchange', function() {\r\n\r\n        //为当前导航页附加一个tag\r\n        this.history.replaceState('hasHash', '', '');\r\n\r\n    }, false);\r\n    //监听重新激活历史记录\r\n    window.addEventListener('popstate', function(e) {\r\n        if (e.state) {\r\n            //侦测是重新打开，还是重新激活\r\n            var show = __webpack_require__(/*! ./show */ \"./src/show.js\");\r\n            show.showPosts(true);\r\n            console.log('重新激活历史');\r\n        }\r\n    });\r\n};\n\n//# sourceURL=webpack:///./src/back.js?");
 
 /***/ }),
 
@@ -194,7 +194,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = function(){\r\n\tlet t = 0,\r\n\t\tp = 0;\r\n\t$(window).scroll(function(e){\r\n\t\tp = $(this).scrollTop();\r\n\t\tif(p>t){\r\n\t\t\t$('.sidebar').addClass('is-hidden')\r\n\t\t}else{\r\n\t\t\t$('.sidebar').removeClass('is-hidden');\r\n\t\t}\r\n\t\tt = p;\r\n\t})\r\n}\n\n//# sourceURL=webpack:///./src/scroll.js?");
+eval("module.exports = function(){\r\n\tlet t = 0,\r\n\t\tp = 0;\r\n\t$(window).scroll(function(e){\r\n\t\tp = $(this).scrollTop();\r\n\t\tif(p>t){\r\n\t\t\t$('.sidebar').addClass('is-hidden');\r\n\t\t}else{\r\n\t\t\t$('.sidebar').removeClass('is-hidden');\r\n\t\t}\r\n\t\tt = p;\r\n\t});\r\n};\n\n//# sourceURL=webpack:///./src/scroll.js?");
 
 /***/ }),
 

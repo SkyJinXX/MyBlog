@@ -4,10 +4,10 @@ module.exports = function(){
 	$(window).scroll(function(e){
 		p = $(this).scrollTop();
 		if(p>t){
-			$('.sidebar').addClass('is-hidden')
+			$('.sidebar').addClass('is-hidden');
 		}else{
 			$('.sidebar').removeClass('is-hidden');
 		}
 		t = p;
-	})
-}
+	});
+};
